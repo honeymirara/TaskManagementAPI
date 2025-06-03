@@ -1,0 +1,28 @@
+service: task-management-api
+
+
+provider:
+  name: aws
+  runtime: nodejs18.x
+  region: us-east-1
+  environment:
+    DB_HOST: ${env:DB_HOST}
+    DB_USER: ${env:DB_USER}
+    DB_PASSWORD: ${env:DB_PASSWORD}
+    DB_NAME: ${env:DB_NAME}
+    NODE_ENV: production
+
+functions:
+  api:
+    handler: src/lambda.handler
+    events:
+      - httpApi: '*'
+
+package:
+  exclude:
+    - node_modules/.bin/**
+    - .git/**
+    - src/tests/**
+    - src/database/schema.sql
+    - README.md
+    - .env* 
