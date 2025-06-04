@@ -86,7 +86,7 @@ npm start
   GET /api/tasks?page=1&limit=5&sort_by=due_date&order=asc&status=pending&due_date_from=2025-06-10&due_date_to=2025-06-20
   ```
 
-### Get all tasks (без фильтрации, сортировки, пагинации)
+### Get all tasks (without filtering, sorting, pagination)
 - **GET** `/api/tasks/all`
 
 ### Get a specific task
@@ -94,20 +94,20 @@ npm start
 
 ### Update a task
 - **PUT** `/api/tasks/:id`
-- **Body:** (аналогично POST)
+- **Body:** (same as POST)
 
 ### Delete a task
 - **DELETE** `/api/tasks/:id`
 
 ## Response Structure
-- Успех:
+- Success:
   ```json
   {
     "status": "success",
     "data": [ ... ]
   }
   ```
-- Ошибка:
+- Error:
   ```json
   {
     "status": "error",
